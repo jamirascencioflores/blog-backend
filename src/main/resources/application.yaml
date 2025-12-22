@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: blog-jamirascencio
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog_db?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true
+
+    username: root
+    password: Joaquin@3003
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: true
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: America/Lima
+
+logging:
+  level:
+    org:
+      springframework:
+        security=DEBUG:
