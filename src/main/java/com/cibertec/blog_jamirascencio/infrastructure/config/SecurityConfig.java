@@ -43,8 +43,7 @@ public class SecurityConfig {
                         // 2. Reglas de Administrador (Más específicas)
                         .requestMatchers(HttpMethod.POST, "/api/categorias/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT, "/api/posts/**").hasRole("ADMIN")
-                        .requestMatchers(HttpMethod.DELETE, "/api/posts/**").hasRole("ADMIN") // <-- Agregado aquí
-
+                        .requestMatchers(HttpMethod.DELETE, "/api/posts/**").authenticated()
                         // 3. Reglas de Usuarios Autenticados (Cualquier rol)
                         .requestMatchers(HttpMethod.POST, "/api/posts/**").authenticated()
 
